@@ -9,6 +9,8 @@ app = Flask(__name__)
 engine = create_engine('mysql+mysqlconnector://root:software1393@localhost/db_plan' , encoding="utf8")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
+session = Session()
+
 
 
 from .views import * 

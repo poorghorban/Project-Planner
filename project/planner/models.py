@@ -1,5 +1,5 @@
-from sqlalchemy import Column , Integer , String , LargeBinary , Text , Date
-from . import Base , Session
+from sqlalchemy import Column , Integer , String , LargeBinary , Text
+from . import Base , session
 from werkzeug.security import check_password_hash , generate_password_hash
 from hashlib import md5
 from sqlalchemy import ForeignKey
@@ -16,7 +16,7 @@ class Admin(Base):
     email = Column(String(255))
     password_hash = Column(String(255))
 
-    def __init(self , name , cellphone_number , image , email , password):
+    def __init__(self , name , cellphone_number , image , email , password):
         self.name = name
         self.cellphone_number = cellphone_number
         self.image = image
@@ -27,7 +27,6 @@ class Admin(Base):
         self.password_hash = generate_password_hash(password)
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -35,10 +34,11 @@ class Admin(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
 
         return flag
+    
+    def check_password(self , password):
+        return check_password_hash(self.password_hash , password)
 
 
 
@@ -56,7 +56,6 @@ class Class(Base):
         self.admin_id = admin_id
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -64,9 +63,6 @@ class Class(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
-
         return flag
 
 class Member(Base):
@@ -90,7 +86,6 @@ class Member(Base):
         self.password_hash = generate_password_hash(password)
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -98,10 +93,15 @@ class Member(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
-
         return flag
+
+    @staticmethod
+    def get_by_cellphone_number(phone)
+        pass
+    
+    def check_password(self , password):
+        return check_password_hash(self.password_hash , password)
+
 
 
 class Items(Base):
@@ -118,7 +118,6 @@ class Items(Base):
         self.class_id = class_id
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -126,9 +125,6 @@ class Items(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
-
         return flag
 
 
@@ -144,7 +140,6 @@ class Class_Member(Base):
         self.class_id = class_id
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -152,9 +147,6 @@ class Class_Member(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
-
         return flag
 
 
@@ -177,7 +169,6 @@ class Member_Item(Base):
         self.description_member = ' '
 
     def save(self):
-        session = Session()
         flag = True
         try:
             session.add(self)
@@ -185,7 +176,4 @@ class Member_Item(Base):
         except:
             session.rollback()
             flag = False
-        finally:
-            session.close()
-
         return flag
