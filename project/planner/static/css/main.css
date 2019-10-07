@@ -21,15 +21,28 @@ body {
 }
 
 .form {
-  background-color: rgba(51, 170, 51, 0.1);
+  box-shadow: 1px 1px 13px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+  align-items: center;
   width: 650px;
   height: 600px;
-  margin: 70px auto;
+  margin: 70px auto 0px;
 }
-.form form input {
+input {
   /* margin: 10px auto; */
-  width: 50%;
-  height: 49px;
-  margin: 10px auto;
-  border: 1px solid black;
+  height: 30px;
+  display: block;
+  border-radius: 10px;
+  margin: 4px auto;
+}
+.form form {
+  margin: auto;
+}
+.form a {
+  display: block;
+  text-align: center;
+}
+a {
+  text-decoration: none;
 }
