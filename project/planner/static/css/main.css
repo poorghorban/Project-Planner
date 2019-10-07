@@ -1,3 +1,35 @@
-body{
-    color:red
+@font-face {
+  font-family: lalezar;
+  src: url(./fonts/Lalezar-Regular.ttf);
+}
+* {
+  font-family: lalezar;
+}
+html {
+  font-size: 18px;
+  height: 100%;
+}
+body {
+  background: rgb(247, 65, 140);
+  background: linear-gradient(
+    315deg,
+    rgba(247, 65, 140, 1) 0%,
+    rgba(251, 171, 102, 1) 100%
+  );
+
+  background-repeat: no-repeat;
+}
+
+.form {
+  background-color: rgba(51, 170, 51, 0.1);
+  width: 650px;
+  height: 600px;
+  margin: 70px auto;
+}
+.form form input {
+  /* margin: 10px auto; */
+  width: 50%;
+  height: 49px;
+  margin: 10px auto;
+  border: 1px solid black;
 }
