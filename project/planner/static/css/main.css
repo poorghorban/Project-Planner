@@ -31,6 +31,7 @@ body {
 }
 input {
   /* margin: 10px auto; */
+  text-align: center;
   height: 30px;
   display: block;
   border-radius: 10px;
@@ -45,4 +46,23 @@ input {
 }
 a {
   text-decoration: none;
+}
+.status {
+  text-align: center;
+  padding: 20px 100px;
+  margin: 0;
+}
+
+.profile h1,
+h4,
+h6,
+p {
+  color: #1f1a1a;
+  text-align: center;
+}
+
+.span {
+  display: block;
+  height: 100px;
+  margin: 20px;
 }
