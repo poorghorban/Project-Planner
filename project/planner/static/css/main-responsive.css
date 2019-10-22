@@ -1,0 +1,20 @@
+.nav-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+.header-ul {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+}
+.nav-0 {
+  padding: 20px 0px;
+}
+.header-ul {
+  padding-right: 50px;
+}
+.box-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
