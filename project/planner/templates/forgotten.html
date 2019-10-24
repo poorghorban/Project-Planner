@@ -32,33 +32,7 @@
         <span class="d-message">{{ message }}</span>
         <form action="" method="POST">
           <div class="l-input">
-            <label for="phone">تلفن همراه</label>
-            <input
-              dir="ltr"
-              pattern=".{11,11}"
-              required
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="09123456789"
-            />
-          </div>
-          <div class="l-input">
-            <label for="name">نام و نام خانوادگی</label>
-            <input required type="text" id="name" name="name" />
-          </div>
-          <div class="l-input">
-            <label for="password">رمــز ورود</label>
-            <input
-              placeholder="حاوی 8 کارکتر از اعداد، حروف بزرگ و کوچک "
-              required
-              type="password"
-              id="password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              name="password"
-            />
-          </div>
-          <div class="l-input">
+            <p class="d-message">ایمیلی برای شما ارسال خواهد شد</p>
             <label for="email">ایمیـــل</label>
             <input
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -70,9 +44,8 @@
               placeholder="example@example.com"
             />
           </div>
-          <label class="btn" for="file">فایل</label>
-          <input type="file" name="avatar" id="file" required />
-          <button class="btn submit-btn" type="submit">ثـبـت</button>
+
+          <button class="btn submit-btn" type="submit">ارسال</button>
         </form>
       </div>
     </main>

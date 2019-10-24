@@ -2,7 +2,16 @@
   font-family: Iransans;
   src: url(./fonts/Iran/IRANSansWeb.ttf);
 }
-
+:root {
+  --primaryColor: rgb(53, 148, 221)
+    linear-gradient(
+      90deg,
+      rgba(53, 148, 221, 1) 0%,
+      rgba(69, 99, 219, 1) 33%,
+      rgba(80, 54, 213, 1) 66%,
+      rgba(91, 22, 208, 1) 100%
+    );
+}
 /* base style (rests and ... )  */
 * {
   box-sizing: border-box;
@@ -19,23 +28,24 @@ a {
   color: #707070;
   text-decoration: none;
 }
-a:hover {
+li > a:hover,
+h1 > a:hover {
+  box-shadow: 3px 3px 10px #333333;
+
   color: #ddd;
   /* inja ie range bahal ezafe mikonam */
-  background: rgb(53, 148, 221);
-  background: linear-gradient(
-    360deg,
-    rgba(53, 148, 221, 1) 0%,
-    rgba(69, 99, 219, 1) 33%,
-    rgba(80, 54, 213, 1) 66%,
-    rgba(91, 22, 208, 1) 100%
-  );
+  background: var(--primaryColor);
   border-radius: 5px;
 }
 li {
   list-style-type: none;
 }
 /* utility hamo inja tarif mikonam */
+
+#file {
+  display: none;
+}
+
 .d-message {
   margin-bottom: 30px;
   display: inline-block;
@@ -45,14 +55,7 @@ li {
   color: #000;
 }
 .btn {
-  background: rgb(53, 148, 221);
-  background: linear-gradient(
-    360deg,
-    rgba(53, 148, 221, 1) 0%,
-    rgba(69, 99, 219, 1) 33%,
-    rgba(80, 54, 213, 1) 66%,
-    rgba(91, 22, 208, 1) 100%
-  );
+  background: var(--primaryColor);
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -72,11 +75,13 @@ input {
   display: block;
 }
 .l-form {
+  border-radius: 10px;
   text-align: center;
   width: 500px;
   font-size: 1.1rem;
   height: 100vh;
-  border: 1px solid #000;
+  box-shadow: 2px 2px 5px rgba(80, 54, 213, 1);
+
   color: #000;
   padding: 30px 20px;
 }
@@ -95,15 +100,10 @@ input {
 }
 
 .p-selected {
+  box-shadow: 3px 3px 10px #333333;
+
   color: #ddd;
-  background: rgb(53, 148, 221);
-  background: linear-gradient(
-    360deg,
-    rgba(53, 148, 221, 1) 0%,
-    rgba(69, 99, 219, 1) 33%,
-    rgba(80, 54, 213, 1) 66%,
-    rgba(91, 22, 208, 1) 100%
-  );
+  background: var(--primaryColor);
   border-radius: 5px;
 }
 .nav {
