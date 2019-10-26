@@ -21,15 +21,20 @@
           <li class="nav-2"><a class="nav" href="#">دربـاره ما</a></li>
           <li class="nav-1"><a class="nav" href="#">سوالات متداول</a></li>
           <li class=" nav-3">
-            <a class="nav p-selected " href="register.html">ثبت نام</a>
+            <a class="nav p-selected " href="{{ url_for('register') }}"
+              >ثبت نام</a
+            >
           </li>
-          <li class="nav-4"><a class="nav" href="login.html">ورورد</a></li>
+          <li class="nav-4">
+            <a class="nav" href="{{ url_for('login') }}">ورورد</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main id="main">
       <div class="l-form">
         <span class="d-message">{{ message }}</span>
+        <!------------------------------------------------------------ form section -------------------------------------------------------------->
         <form action="" method="POST">
           <div class="l-input">
             <p class="d-message">ایمیلی برای شما ارسال خواهد شد</p>

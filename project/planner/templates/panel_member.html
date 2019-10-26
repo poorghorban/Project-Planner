@@ -16,7 +16,7 @@
     <header id="header">
       <nav class="nav-wrap">
         <h1 class=" nav-0">
-          <a class="" href="./index.html">پــلنچی</a>
+          <a class="" href="{{ url_for('index') }}">پــلنچی</a>
         </h1>
 
         <ul class="header-ul">
@@ -25,9 +25,11 @@
           </li>
           <li class="nav-1"><a class="nav" href="#">سوالات متداول</a></li>
           <li class="nav-3">
-            <a class="nav" href="./register.html">ثبت نام</a>
+            <a class="nav" href="{{ url_for('register') }}">ثبت نام</a>
           </li>
-          <li class="nav-4"><a class="nav" href="./login.html">ورورد</a></li>
+          <li class="nav-4">
+            <a class="nav" href="{{ url_for('login') }}">ورورد</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -35,7 +37,7 @@
       <div class="pannel">
         <h1>پنل کاربری</h1>
         <span dir="rtl" class="d-message"> سلام{{ name }} خوش اومدی</span>
-        <p>کارگران مشغول کار ند :دی</p>
+        <!-- <p>کارگران مشغول کار ند :دی</p> -->
       </div>
     </main>
     <footer>

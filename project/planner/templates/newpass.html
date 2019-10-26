@@ -15,16 +15,16 @@
   <body>
     <header id="header">
       <nav class="nav-wrap">
-        <h1 class="nav-0"><a href="./index.html">پــلنچی</a></h1>
+        <h1 class="nav-0"><a href="{{ url_for('index') }}">پــلنچی</a></h1>
 
         <ul class="header-ul">
           <li class="nav-2"><a class="nav" href="#">دربـاره ما</a></li>
           <li class="nav-1"><a class="nav" href="#">سوالات متداول</a></li>
           <li class=" nav-3">
-            <a class="nav" href="register.html">ثبت نام</a>
+            <a class="nav" href="{{ url_for('register') }}">ثبت نام</a>
           </li>
           <li class="nav-4 ">
-            <a class="nav p-selected" href="login.html">ورورد</a>
+            <a class="nav p-selected" href="{{ url_for('login') }}">ورورد</a>
           </li>
         </ul>
       </nav>
@@ -32,6 +32,7 @@
     <main id="main">
       <div class="l-form">
         <span class="d-message">{{ message }}</span>
+        <!------------------------------------------------------------ form section -------------------------------------------------------------->
         <form action="" method="POST">
           <div class="l-input">
             <label for="password">رمز جدید</label>
